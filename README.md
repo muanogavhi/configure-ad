@@ -39,7 +39,7 @@ Log-into DC-1 and on the server manager click "Add Roles and Features", and hit 
 
 # Step 3: Create user and organizational units
 
-Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.com after the username since we just promoted it to a domain controller. In server manager go to tools --> Active Directory Users and Computers and create a new organizational unit called _EMPLOYEES and one called _ADMINS
+Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.com after the username since we just promoted it to a domain controller. In server manager go to tools >> Active Directory Users and Computers and create a new organizational unit called _EMPLOYEES and one called _ADMINS
 
 <p>
 <img width="2056" alt="Screenshot 2024-10-17 at 3 18 47 PM" src="https://github.com/user-attachments/assets/b5cbfaa5-9fed-4be9-9815-ac046f7b6c91">
