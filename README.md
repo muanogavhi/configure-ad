@@ -3,18 +3,18 @@
 </p>
 
 <h1>Configure Active Directory within Azure virtual Machines</h1>
-This lab demonstrates the deployment of an Active Directory environment in Azure, this including creating two VMs(Dc-1 & Client-1) then you join client-1 to the domain controller, login to DC-1 using domain user that was created once logged in create several user using PowerShell script . Additionally, we will explore assigning permissions to groups. <br />
+This lab demonstrates the configuration of an Active Directory environment in Azure, this including creating and deploying two VMs(Dc-1 & Client-1) then you join client-1 to the domain controller, login to DC-1 using domain user that was created once logged in create several user using PowerShell script . Additionally, we will explore assigning permissions to groups. <br />
 
 
 <h2>Environments and Technologies Used</h2>
 
--Microsoft Azure (Virtual Machines/Compute)
+-Microsoft Azure (Virtual Machines)
 
--Remote Desktop
+-Remote Desktop Protocol (RDP)
 
 -Active Directory Domain Services
 
--PowerShell
+-PowerShell ISE
 
 <h2>Operating Systems Used </h2>
 
