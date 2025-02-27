@@ -3,7 +3,7 @@
 </p>
 
 <h1>Configure Active Directory within Azure virtual Machines</h1>
-This lab demonstrates the configuration of an Active Directory environment in Azure, this including creating and deploying two VMs(Dc-1 & Client-1) then you join client-1 to the domain controller, login to DC-1 using domain user that was created once logged in create several user using PowerShell script . Additionally, we will explore assigning permissions to groups. <br />
+This lab demonstrates the configuration of an Active Directory environment in Azure, this including creating and deploying two VMs(Dc-1 & Client-1) then you join client-1 to the domain controller, creating several user using PowerShell script . Additionally, we will explore assigning permissions to groups. <br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -42,7 +42,7 @@ Log-into DC-1 and on the server manager click "Add Roles and Features", and hit 
 
 # Step 3: Create user and organizational units
 
-Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.com after the username since we just promoted it to a domain controller. In server manager go to tools >> Active Directory Users and Computers and create a new organizational unit called _EMPLOYEES and one called _ADMINS
+Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.com after the username since we just promoted it to a domain controller. In server manager go to tools >> Active Directory Users and Computers and create a new organizational unit called _EMPLOYEES and one called _ADMINS.
 
 <p>
 <img width="2056" alt="Screenshot 2024-10-17 at 3 18 47 PM" src="https://github.com/user-attachments/assets/b5cbfaa5-9fed-4be9-9815-ac046f7b6c91">
@@ -59,14 +59,14 @@ Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.co
 
 # Step 5: Automate User Account Creation with PowerShell
 
-<p>Login to DC-1 as jane admin, Open PowerShell Ise as an administrator Create a new File and paste the contents of the script into it (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1). Run the script and observe the accounts being created
+<p>Login to DC-1 as jane admin, Open PowerShell Ise as an administrator Create a new File and paste the contents of the script into it (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1). Run the script and observe the accounts being created.
 
   
 <img width="2056" alt="Screenshot 2024-10-17 at 2 38 51 PM" src="https://github.com/user-attachments/assets/73d96625-1fd1-48df-a14b-3955517c2832">
 
 
 # Step 5: Group Policy and Managing Accounts
-<p>Type gpmc.msc in Search Bar to open the Group Policy Management Console and navigate to "Account Lockout Policy" so we can adjust some settings such as lockout duration and threshold of invalid login attempts. Then log into Client-1 as the Domain Admin run the command "gpupdate /force “Next we open Command Prompt as an Administrator and run the command "gpresult" to confirm we made our changes. Now we verify this new lockout policy has taken place by logging into one of our random users with the wrong password and seeing if we get locked out. DC-1 we will find the user in Active Directory Users and Computers and unlock that account. We will log into that account again but this time with the right password and verify that our account was unlocked
+<p>Type gpmc.msc in Search Bar to open the Group Policy Management Console and navigate to "Account Lockout Policy" so we can adjust some settings such as lockout duration and threshold of invalid login attempts. Then log into Client-1 as the Domain Admin run the command "gpupdate /force “Next we open Command Prompt as an Administrator and run the command "gpresult" to confirm we made our changes. Now we verify this new lockout policy has taken place by logging into one of our random users with the wrong password and seeing if we get locked out. DC-1 we will find the user in Active Directory Users and Computers and unlock that account. We will log into that account again but this time with the right password and verify that our account was unlocked.
 
 
 
