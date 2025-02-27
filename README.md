@@ -3,7 +3,7 @@
 </p>
 
 <h1>Configure Active Directory within Azure virtual Machines</h1>
-This lab demonstrates the deployment of an Active Directory environment in Azure, this including creating two VMs(Dc-1 & Client-1) then you join client-1 to the domain controller, login to DC-1 using domain user that was created once logged in create several user using PowerShell script . Additionally, we will explore setting up network file shares and assigning permissions. <br />
+This lab demonstrates the deployment of an Active Directory environment in Azure, this including creating two VMs(Dc-1 & Client-1) then you join client-1 to the domain controller, login to DC-1 using domain user that was created once logged in create several user using PowerShell script . Additionally, we will explore assigning permissions to groups. <br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -69,4 +69,7 @@ Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.co
 
 <img width="2056" alt="Screenshot 2024-10-17 at 3 07 21 PM" src="https://github.com/user-attachments/assets/0d730396-b70d-47a5-92af-479c447065ab">
 
-Congratulation you've now successfully setup and configured Active Directory  !!!
+
+
+# Congratulation you've now successfully setup and configured Active Directory  !!!
+
