@@ -23,7 +23,7 @@ This lab demonstrates the deployment of an Active Directory environment in Azure
 
 # Step 1: creating and configuring VMs
 
-Create two virtual machines, a Windows Server 2022 VM for the Domain Controller (DC-1) and create a Windows 10 VM for the Client machine (Client-1), ensure both machines are in the same Resource Group and Virtual Network (Vnet), once both virtual machines are deployed join client-1 to DC_1 by Setting the Private IP address for DC-1 to staticSet Client-1's DNS settings to DC-1's now static Private IP address, then restart Client-1 VM so the new settings will be enabled(this enables client-1 to be aware of all users in DC-1). Log into Client-1 through Remote Desktop and run the "ping" DC-1's Private IP address in PowerShell to confirm connectivity.
+Create two virtual machines, a Windows Server 2022 VM for the Domain Controller (DC-1) and create a Windows 10 VM for the Client machine (Client-1), ensure both machines are in the same Resource Group and Virtual Network (Vnet), once both virtual machines are deployed join client-1 to DC_1 by Set the Private IP address for DC-1 to static. Log into Client-1 through Remote Desktop and run the "ping" DC-1's Private IP address in PowerShell to confirm connectivity.
 
 
 ![Screenshot 2025-02-27 173302](https://github.com/user-attachments/assets/d3815fb2-3517-40ce-9685-5f2292cfa0db)
@@ -69,4 +69,4 @@ Restart and log back into DC-1 as a normal user. Make sure to put @yourdomain.co
 
 <img width="2056" alt="Screenshot 2024-10-17 at 3 07 21 PM" src="https://github.com/user-attachments/assets/0d730396-b70d-47a5-92af-479c447065ab">
 
-You've now successfully setup Active Directory!!!
+Congratulation you've now successfully setup and configured Active Directory  !!!
