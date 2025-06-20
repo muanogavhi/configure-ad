@@ -44,16 +44,17 @@ Set Client-1's DNS settings to DC-1's now static Private IP address, then restar
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 30 22 PM" src="https://github.com/user-attachments/assets/fdda1c54-a7bb-4042-99ca-5de758d83e0d">
+![image](https://github.com/user-attachments/assets/38cf4a62-29f2-421c-8e81-95fe7bb09b38)
+
 </p>
 <p>
 Log into Client-1 through Remote Desktop and run the "ping" DC-1's Private IP address in PowerShell to confirm connectivity.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 31 28 PM" src="https://github.com/user-attachments/assets/274fc3fc-b96c-45fd-b1d5-494072552416">
+
+![image](https://github.com/user-attachments/assets/7578a826-c0d1-4460-a5b1-8bbe78875d3e)
+
 </p>
 <p>
 Then, run "ipconfig /all" and verify that DC-1's Private IP shows up under "DNS Servers."
@@ -62,8 +63,9 @@ Then, run "ipconfig /all" and verify that DC-1's Private IP shows up under "DNS 
 
 <h2>Step 2: Install Active Directory</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 47 37 PM" src="https://github.com/user-attachments/assets/37512fdc-d011-4964-a210-29419f4695c0">
+
+![image](https://github.com/user-attachments/assets/cbfd14f0-88ab-458f-9694-c58f61e7d4e0)
+
 </p>
 <p>
 Open Server Manager
@@ -74,8 +76,9 @@ Click on the flag icon on the top right and click "Promote this server to a Doma
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 45 44 PM" src="https://github.com/user-attachments/assets/a4d48875-7934-438e-b5b3-bcfa29d7c484">
+![image](https://github.com/user-attachments/assets/896a5f3b-9837-499d-bca0-8a21e633f2d8)
+
+
 </p>
 <p>
 Now log into DC-1 again, but this time as mydomain.com\[whatever you set your username for the Domain Controller VM in Azure].
@@ -84,31 +87,34 @@ Now log into DC-1 again, but this time as mydomain.com\[whatever you set your us
 
 <h2>Step 3: Create Users and Organizational Units</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 52 29 PM" src="https://github.com/user-attachments/assets/90c55542-6016-4cd3-9c98-e3495f84f72f">
+
+![image](https://github.com/user-attachments/assets/822ac014-4922-456b-9487-5131d0eecd07)
+
 </p>
 <p>
 Using Active Directory Users and Computers (ADUC), create three OUs: _EMPLOYEES, _ADMINS, and _CLIENTS.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 54 32 PM" src="https://github.com/user-attachments/assets/4e87cb11-9589-40fb-b589-e77add4a41a1">
+![image](https://github.com/user-attachments/assets/fd0dd8fd-f121-418e-a242-a78005f160e2)
+
 </p>
 <p>
 Create a new user so we can make a Domain Admin account, "jane_admin."
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 56 41 PM" src="https://github.com/user-attachments/assets/b945aa4d-879b-4b71-9061-88b14566e20f">
+
+![image](https://github.com/user-attachments/assets/428cf98e-dffa-49a2-a312-7b32cf3e364b)
+
 </p>
 <p>
 Now assign the user to the Domain Admins group.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 59 09 PM" src="https://github.com/user-attachments/assets/9158095d-ad1e-4086-9121-e2af5cf86103">
+
+![image](https://github.com/user-attachments/assets/b9b3bd65-514b-4c28-8780-0072dc9c50f2)
+
 </p>
 <p>
 Log in as cyberlab.com\jane_admin for further administration.
@@ -117,16 +123,18 @@ Log in as cyberlab.com\jane_admin for further administration.
 
 <h2>Step 4: Join the Client Machine to the Domain</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 2 01 16 PM" src="https://github.com/user-attachments/assets/f7ad8cc4-cbb7-4c41-b2d5-7bcd7b2e3c37">
+
+![image](https://github.com/user-attachments/assets/6a5e0083-0ba1-4c96-804e-dbc6edb80a54)
+
 </p>
 <p>
 In Client-1, go to your settings "About" section and click "Rename this PC (advanced)" then "Change" then add the name of your Domain to join this Client to the Domain. 
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 2 02 43 PM" src="https://github.com/user-attachments/assets/8b14a2eb-120f-4086-b401-68671b5f46f0">
+
+![image](https://github.com/user-attachments/assets/bc884f35-9937-438c-9062-ebbd69788f35)
+
 </p>
 <p>
 It will then ask for you to sign in as a Domain Admin to allow this. 
@@ -135,8 +143,9 @@ Then allow your VM to restart.
 </p>
 <br />
 
-<p>
-</p><img width="2056" alt="Screenshot 2024-10-17 at 2 08 27 PM" src="https://github.com/user-attachments/assets/fc670165-b0c4-41f1-970f-76adb92f9f9e">
+
+![image](https://github.com/user-attachments/assets/4f0902f0-fe74-4e2c-96f8-3ec56ef90b6e)
+
 <p>
 In DC-1, verify the successful domain join in ADUC by confirming Client-1 appears in the Computers container.
 </p>
@@ -144,16 +153,18 @@ In DC-1, verify the successful domain join in ADUC by confirming Client-1 appear
 
 <h2>Step 5: Automate User Account Creation with PowerShell</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 2 38 51 PM" src="https://github.com/user-attachments/assets/73d96625-1fd1-48df-a14b-3955517c2832">
+
+![image](https://github.com/user-attachments/assets/1b4aa0bc-ea9f-499d-8f36-73e2dd2f3941)
+
 </p>
 <p>
 Open PowerShell ISE as an administrator on DC-1.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 2 41 33 PM" src="https://github.com/user-attachments/assets/a6142041-808d-4290-bf8a-794e3e10bfc9">
+
+![image](https://github.com/user-attachments/assets/cfca7c65-2ee1-44f4-a333-8724f9270390)
+
 </p>
 <p>
 Execute a PowerShell script to create 10 thousand user accounts in the _EMPLOYEES OU.
@@ -170,40 +181,45 @@ Test one of the newly created accounts by logging into Client-1 (mydomain.com\[r
 
 <h2>Step 6: Group Policy and Managing Accounts</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 07 21 PM" src="https://github.com/user-attachments/assets/0d730396-b70d-47a5-92af-479c447065ab">
+
+![image](https://github.com/user-attachments/assets/8eb1154d-1487-4654-85da-56a6063321cb)
+
 </p>
 <p>
 Type gpmc.msc in Search Bar to open the Group Policy Management Console and navigate to "Account Lockout Policy" so we can adjust some settings such as lockout duration and threshold of invalid login attempts.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 12 40 PM" src="https://github.com/user-attachments/assets/0484278e-1fa7-4461-b5d6-4444d5c0b331">
+
+![image](https://github.com/user-attachments/assets/a2d356bc-9add-424d-a13d-83fbf08eef96)
+
 </p>
 <p>
 Then log into Client-1 as the Domain Admin run the command "gpupdate /force"
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 14 05 PM" src="https://github.com/user-attachments/assets/30a7f0bc-40a3-48de-9c52-c00a05511f3b">
+
+![image](https://github.com/user-attachments/assets/8c4b37ab-db2d-4ecf-818c-b837a4bfea0a)
+
 </p>
 <p>
 Next we open Command Prompt as an Administrator and run the command "gpresult" to confirm we made our changes.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 17 15 PM" src="https://github.com/user-attachments/assets/c436404c-4ff6-4c99-80e1-d6b432f303f3">
+
+![image](https://github.com/user-attachments/assets/cb73ca2d-234b-4a59-8d9a-e3a027ef83e2)
+
 </p>
 <p>
 Now we verify this new lockout policy has taken place by logging into one of our random users with the wrong password and seeing if we get locked out.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 18 47 PM" src="https://github.com/user-attachments/assets/b5cbfaa5-9fed-4be9-9815-ac046f7b6c91">
+
+![image](https://github.com/user-attachments/assets/7decb118-c89d-49c1-95e0-277f8524678e)
+
 </p>
 <p>
 In DC-1 we will find the user in Active Directory Users and Computers and unlock that account.
@@ -221,8 +237,9 @@ We will log into that account again but this time with the right password and ve
 
 <h2>Step 7: File Shares and Permissions</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 41 53 PM" src="https://github.com/user-attachments/assets/f4b59ba1-f617-4fc8-95ab-6e867c7e8f9f">
+
+![image](https://github.com/user-attachments/assets/a6015d10-c31d-42a3-b90d-15392b5c7c61)
+
 </p>
 <p>
 Log into DC-1 as jane_admin and create the following folders on the C: drive:
@@ -236,7 +253,10 @@ Log into DC-1 as jane_admin and create the following folders on the C: drive:
 
 <p>
 Set Permissions on Folders:
-<img width="2056" alt="Screenshot 2024-10-17 at 3 43 10 PM" src="https://github.com/user-attachments/assets/4aa5e84c-badb-4860-aef6-796802ba3f89">
+
+  
+![image](https://github.com/user-attachments/assets/dee6f340-4b21-4a34-b18c-20126d52f47e)
+
 </p>  
 <p>
 For read-access: assign Domain Users the Read permission.
@@ -247,16 +267,18 @@ For no-access: assign Domain Admins the Read/Write permission.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 45 59 PM" src="https://github.com/user-attachments/assets/bf446b8b-c257-462f-845b-006ba4ac11fa">
+
+![image](https://github.com/user-attachments/assets/907bc127-f9f1-455d-a674-4f412bd1d518)
+
 </p>
 <p>
 On Client-1, log in as a normal user (e.g., mydomain.com\john_employee), open the Run dialog and type \\DC-1 to access the shared folders.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 47 53 PM" src="https://github.com/user-attachments/assets/cc69b911-e144-4ec3-854d-8430c913c06d">
+
+![image](https://github.com/user-attachments/assets/66627edb-5427-482e-890f-f5540687fd80)
+
 </p>
 <p>
 Now we can test access to each folder:
@@ -267,40 +289,45 @@ Now we can test access to each folder:
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 50 15 PM" src="https://github.com/user-attachments/assets/4eb4eb5f-f206-4048-a330-d85c3f0ce178">
+
+![image](https://github.com/user-attachments/assets/7b22b099-1ea9-451c-9dc5-da83010a5a13)
+
 </p>
 <p>
 On DC-1, create a Security Group named ACCOUNTANTS in ADUC.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 51 42 PM" src="https://github.com/user-attachments/assets/f2993713-dd08-4c26-804d-ffebfe3ca24d">
+
+![image](https://github.com/user-attachments/assets/6906af0f-f39f-4eb4-b6ec-4d28afbb775a)
+
 </p>
 <p>
 Assign Read/Write permissions to the ACCOUNTANTS group on the accounting folder.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 52 33 PM" src="https://github.com/user-attachments/assets/c51f377a-8ae6-4613-88b0-8753c8cbc57d">
+
+![image](https://github.com/user-attachments/assets/ebe894f8-e9dc-4317-942c-68e2380545da)
+
 </p>
 <p>
 On Client-1, attempt to access the accounting folder as john_employee (should fail).
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 53 05 PM" src="https://github.com/user-attachments/assets/385504ce-02b4-47f0-8dc9-8d5253fecdcb">
+
+![image](https://github.com/user-attachments/assets/b27b813f-0154-451f-8b1e-24fe76b79076)
+
 </p>
 <p>
 Add john_employee to the ACCOUNTANTS security group.
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 54 47 PM" src="https://github.com/user-attachments/assets/c7f94971-d415-485b-9612-c3ff0d24133b">
+
+![image](https://github.com/user-attachments/assets/2c4b4a09-fd28-4590-8b4f-1ace4992022e)
+
 </p>
 <p>
 Re-log into Client-1 and confirm access to the accounting folder now works.
@@ -309,16 +336,18 @@ Re-log into Client-1 and confirm access to the accounting folder now works.
 
 <h2>Step 8: Viewing Logs in Event Viewer</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 27 14 PM" src="https://github.com/user-attachments/assets/b90bfe3e-9f1a-49f6-8515-5ca484a7e074">
+
+![image](https://github.com/user-attachments/assets/c4d35bc4-3fb4-4f9d-ae36-9cd0f4a2c7eb)
+
 </p>
 <p>
 Search for eventvwr.msc on Client-1 and run as administrator
 </p>
 <br />
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 3 28 31 PM" src="https://github.com/user-attachments/assets/0c144f09-1ade-49fe-b1d2-ed3c715fa07e">
+
+![image](https://github.com/user-attachments/assets/99bebbb4-a394-4960-9ebe-7e1e230f6fb7)
+
 </p>
 <p>
 Navigate to Windows Logs > Security.
