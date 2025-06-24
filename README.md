@@ -16,36 +16,28 @@ This lab demonstrates the deployment of an Active Directory environment in Azure
 
 <h2>Step 1: Deploy Azure Resources</h2>
 
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 12 48 31 PM" src="https://github.com/user-attachments/assets/69be9975-7170-4d72-beac-798495852c97">
+.
+  Create the Domain Controller VM (Windows Server 2022) named “DC-1”:
 </p>
 <p>
-Create a Windows Server 2022 VM for the Domain Controller (DC-1).
-
-Create a Windows 10 VM for the Client machine (Client-1).
-
-Ensure both machines are in the same Resource Group and Virtual Network (Vnet).
-</p>
-<br />
-
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 12 54 33 PM" src="https://github.com/user-attachments/assets/219f8a01-4047-4aa9-819b-bb77b5a2adf2">
+  <img src="https://i.imgur.com/gaAzjvb.png" height="75%" width="100%" alt="resource group"/>
+  <img src="https://i.imgur.com/hubTfey.png" height="75%" width="100%" alt="vm ms server"/>
 </p>
 <p>
-Set the Private IP address for DC-1 to static.
-</p>
-<br />
-
-<p>
-<img width="2056" alt="Screenshot 2024-10-17 at 1 14 36 PM" src="https://github.com/user-attachments/assets/338d0cd6-be64-4ed0-9578-de491d6bb6be">
+  Create the Client VM (Windows 10) named “Client-1”. Use the same Resource Group and Vnet that was created in previous step:
 </p>
 <p>
-Set Client-1's DNS settings to DC-1's now static Private IP address, then restart Client-1 VM so the new settings will be enabled.
+  <img src="https://i.imgur.com/XyEmv8f.png" height="75%" width="100%" alt="vm windows"/>
 </p>
-<br />
-
-![image](https://github.com/user-attachments/assets/38cf4a62-29f2-421c-8e81-95fe7bb09b38)
-
+<p>
+  Set Domain Controller’s NIC Private IP address to be static:
+</p>
+<p>
+  <img src="https://i.imgur.com/KHU9kC4.png" height="75%" width="100%" alt="static ip"/>
+</p>
+<p>
+  Ensure that both VMs are in the same Vnet (you can check the topology with Network Watcher):
+</p>
 </p>
 <p>
 Log into Client-1 through Remote Desktop and run the "ping" DC-1's Private IP address in PowerShell to confirm connectivity.
